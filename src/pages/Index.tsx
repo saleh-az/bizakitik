@@ -17,7 +17,7 @@ const Index = () => {
             BizSakitBiriyik
           </h1>
           <p className="text-muted-foreground">
-            Azerbaycan internetində üzv olmadan sərbəst danışa biləcəyin nadir yerlərdən biri.
+            Azərbaycan internetində üzv olmadan sərbəst danışa biləcəyin nadir yerlərdən biri.
           </p>
           <div className="mt-4">
             <ThemeToggle />
