@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Tinos:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Classic imageboard colors */
+    --background: 43 26% 95%;
+    --foreground: 0 0% 13%;
+    
+    --card: 43 30% 92%;
+    --card-foreground: 0 0% 13%;
+    
+    --popover: 43 30% 92%;
+    --popover-foreground: 0 0% 13%;
+    
+    /* Red accent for links and highlights */
+    --primary: 0 70% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Muted blue for secondary actions */
+    --secondary: 220 15% 85%;
+    --secondary-foreground: 220 30% 30%;
+    
+    --muted: 43 20% 88%;
+    --muted-foreground: 0 0% 40%;
+    
+    /* Green for quotes */
+    --accent: 120 40% 35%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 43 20% 80%;
+    --input: 43 20% 88%;
+    --ring: 0 70% 45%;
+    
+    --radius: 0;
+    
+    /* Post colors */
+    --post-bg: 43 35% 90%;
+    --post-header: 43 25% 75%;
+    --post-highlight: 43 40% 85%;
+    
+    /* Link colors */
+    --link: 240 100% 40%;
+    --link-visited: 270 50% 40%;
+    --link-hover: 0 70% 45%;
+    
+    /* Quote color */
+    --quote: 120 60% 30%;
+    
+    /* Reply highlight */
+    --reply-highlight: 60 80% 85%;
+    
+    /* Admin colors */
+    --admin-bg: 0 60% 95%;
+    --admin-accent: 0 70% 40%;
+    
+    /* Typography */
+    --font-mono: 'Courier Prime', monospace;
+    --font-serif: 'Tinos', serif;
+  }
+  
+  .dark {
+    --background: 220 15% 12%;
+    --foreground: 43 20% 90%;
+    
+    --card: 220 15% 15%;
+    --card-foreground: 43 20% 90%;
+    
+    --popover: 220 15% 15%;
+    --popover-foreground: 43 20% 90%;
+    
+    --primary: 0 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 220 15% 25%;
+    --secondary-foreground: 43 20% 85%;
+    
+    --muted: 220 15% 20%;
+    --muted-foreground: 43 15% 60%;
+    
+    --accent: 120 40% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 25%;
+    --input: 220 15% 20%;
+    --ring: 0 60% 55%;
+    
+    --post-bg: 220 15% 18%;
+    --post-header: 220 15% 25%;
+    --post-highlight: 220 20% 22%;
+    
+    --link: 210 100% 65%;
+    --link-visited: 270 60% 65%;
+    --link-hover: 0 70% 60%;
+    
+    --quote: 120 50% 50%;
+    
+    --reply-highlight: 60 40% 25%;
+    
+    --admin-bg: 0 40% 18%;
+    --admin-accent: 0 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-serif antialiased;
+    font-family: var(--font-serif);
+  }
+  
+  a {
+    @apply text-link hover:text-link-hover underline;
+  }
+  
+  a:visited {
+    @apply text-link-visited;
+  }
+}
+
+@layer components {
+  .board-title {
+    @apply text-2xl font-bold text-center py-2;
+    font-family: var(--font-serif);
+  }
+  
+  .post-container {
+    @apply bg-post-bg border border-border p-2 mb-2;
+  }
+  
+  .post-header {
+    @apply bg-post-header px-2 py-1 text-sm flex flex-wrap items-center gap-2;
+    font-family: var(--font-mono);
+  }
+  
+  .post-number {
+    @apply text-primary font-bold cursor-pointer hover:underline;
+  }
+  
+  .post-content {
+    @apply p-2 text-sm leading-relaxed whitespace-pre-wrap break-words;
+  }
+  
+  .greentext {
+    @apply text-quote font-medium;
+  }
+  
+  .quote-link {
+    @apply text-link font-mono text-sm hover:text-link-hover;
+  }
+  
+  .thread-reply-form {
+    @apply bg-card border border-border p-3;
+  }
+  
+  .imageboard-input {
+    @apply w-full px-2 py-1 bg-input border border-border text-foreground text-sm;
+    font-family: var(--font-mono);
+  }
+  
+  .imageboard-button {
+    @apply px-4 py-1 bg-secondary text-secondary-foreground border border-border text-sm font-medium;
+    @apply hover:bg-muted active:bg-border transition-colors cursor-pointer;
+    font-family: var(--font-mono);
+  }
+  
+  .imageboard-button-primary {
+    @apply px-4 py-1 bg-primary text-primary-foreground border border-primary text-sm font-medium;
+    @apply hover:bg-primary/90 active:bg-primary/80 transition-colors cursor-pointer;
+    font-family: var(--font-mono);
+  }
+  
+  .board-nav {
+    @apply flex flex-wrap gap-1 justify-center py-2 text-sm bg-post-header;
+    font-family: var(--font-mono);
+  }
+  
+  .board-link {
+    @apply text-link hover:text-link-hover no-underline px-1;
+  }
+  
+  .thumbnail {
+    @apply max-w-[150px] max-h-[150px] object-contain cursor-pointer float-left mr-3 mb-1;
+    @apply hover:opacity-80 transition-opacity border border-border;
+  }
+  
+  .expanded-image {
+    @apply max-w-full max-h-[90vh] object-contain cursor-pointer;
+  }
+  
+  .reply-highlight {
+    @apply bg-reply-highlight;
+  }
+  
+  .admin-panel {
+    @apply bg-admin-bg border-2 border-admin-accent p-4;
+  }
+  
+  .sticky-thread {
+    @apply border-l-4 border-l-primary;
+  }
+  
+  .nsfw-warning {
+    @apply bg-destructive/20 text-destructive border border-destructive px-2 py-1 text-xs font-bold;
+  }
+  
+  .post-image-info {
+    @apply text-xs text-muted-foreground font-mono;
+  }
+}
+
+@layer utilities {
+  .text-link {
+    color: hsl(var(--link));
+  }
+  
+  .text-link-visited {
+    color: hsl(var(--link-visited));
+  }
+  
+  .text-link-hover {
+    color: hsl(var(--link-hover));
+  }
+  
+  .text-quote {
+    color: hsl(var(--quote));
+  }
+  
+  .bg-post-bg {
+    background-color: hsl(var(--post-bg));
+  }
+  
+  .bg-post-header {
+    background-color: hsl(var(--post-header));
+  }
+  
+  .bg-post-highlight {
+    background-color: hsl(var(--post-highlight));
+  }
+  
+  .bg-reply-highlight {
+    background-color: hsl(var(--reply-highlight));
+  }
+  
+  .bg-admin-bg {
+    background-color: hsl(var(--admin-bg));
+  }
+  
+  .border-admin-accent {
+    border-color: hsl(var(--admin-accent));
+  }
+}
+
+.text-xs{
+  text-decoration: none;
+}
