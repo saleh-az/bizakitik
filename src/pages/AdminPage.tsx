@@ -287,7 +287,7 @@ const AdminPage = () => {
         
         {/* Board List */}
         <section className="admin-panel mb-4">
-          <h2 className="font-bold mb-2">Şöbələr</h2>
+          <h2 className="font-bold mb-2">Kategoriyalar</h2>
           <div className="space-y-1">
             {boards.map((board) => (
               <div key={board.id} className="flex items-center justify-between p-2 bg-background">

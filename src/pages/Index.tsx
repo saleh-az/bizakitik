@@ -14,10 +14,10 @@ const Index = () => {
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-4xl font-bold text-primary mb-2 font-serif">
-            Anonim İmicbord
+            BizSakitBiriyik
           </h1>
           <p className="text-muted-foreground">
-            Azərbaycan dilində anonim müzakirə platforması
+            Azerbaycan internetində üzv olmadan sərbəst danışa biləcəyin nadir yerlərdən biri.
           </p>
           <div className="mt-4">
             <ThemeToggle />
@@ -26,7 +26,7 @@ const Index = () => {
         
         {/* Board List */}
         <section className="mb-8">
-          <h2 className="board-title border-b border-border mb-4">Şöbələr</h2>
+          <h2 className="board-title border-b border-border mb-4">Kategoriyalar</h2>
           
           {isLoading ? (
             <div className="text-center py-4 text-muted-foreground">Yüklənir...</div>
@@ -68,18 +68,19 @@ const Index = () => {
         <section className="post-container">
           <h2 className="board-title border-b border-border">Qaydalar</h2>
           <div className="p-4 text-sm space-y-2">
-            <p>1. Azərbaycan qanunlarına zidd məzmun paylaşmaq qadağandır.</p>
+            <p>1. Sayt içi drama yaratmaq qadağandır.</p>
             <p>2. Şəxsi məlumat paylaşmayın (doxxing qadağandır).</p>
             <p>3. Spam və flood qadağandır.</p>
-            <p>4. NSFW məzmun yalnız müvafiq şöbələrdə paylaşıla bilər.</p>
+            <p>4. NSFW məzmun yalnız müvafiq kategoriyalarda paylaşıla bilər.</p>
             <p>5. Reklam qadağandır.</p>
             <p>6. Bütün postlar anonimdir.</p>
+            <p>7. Bütün postlar anonimdir.</p>
           </div>
         </section>
         
         {/* Footer */}
         <footer className="text-center mt-8 py-4 text-sm text-muted-foreground border-t border-border">
-          <p>Bütün postlar anonimdir. IP ünvanları hash edilir.</p>
+          <p>Sən sakitbirisən. Elə də davran.</p>
         </footer>
       </div>
     </div>
