@@ -74,7 +74,6 @@ const Index = () => {
             <p>4. NSFW məzmun yalnız müvafiq kategoriyalarda paylaşıla bilər.</p>
             <p>5. Reklam qadağandır.</p>
             <p>6. Bütün postlar anonimdir.</p>
-            <p>7. Bütün postlar anonimdir.</p>
           </div>
         </section>
         
