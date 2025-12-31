@@ -83,7 +83,7 @@ const Index = () => {
         
         {/* Footer */}
         <footer className="text-center mt-8 py-4 text-sm text-muted-foreground border-t border-border">
-          <p>Sən sakitbirisən. Elə də davran.</p>
+          <p>© 2025 BizSakitBiriyik.</p>
         </footer>
       </div>
     </div>
